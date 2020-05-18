@@ -52,6 +52,8 @@ This project was developed with the following technologies:
 
 <p>Github Explorer is an easy way to keep on tracking your favourites repositories.</p>
 
+- [Access Live App](https://github-explorer-schlickmann.netlify.app/)
+
 ## 🔖 Layout
 
 <table>
