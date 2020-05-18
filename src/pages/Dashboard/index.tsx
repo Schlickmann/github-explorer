@@ -65,6 +65,12 @@ const Dashboard: React.FC = () => {
     }
   }
 
+  function handleDeleteRepository(fullName: string): void {
+    setRepositories(
+      repositories.filter((repository) => repository.full_name !== fullName),
+    );
+  }
+
   return (
     <>
       <img src={logo} alt="Github Explorer" />
@@ -84,18 +90,26 @@ const Dashboard: React.FC = () => {
 
       <Repositories>
         {repositories.map((repository: Repository) => (
-          <a key={repository.full_name} href="test">
-            <img
-              src={repository.owner.avatar_url}
-              alt={repository.owner.login}
-            />
-            <div>
-              <strong>{repository.full_name}</strong>
-              <p>{repository.description}</p>
-            </div>
+          <div key={repository.full_name}>
+            <button
+              onClick={() => handleDeleteRepository(repository.full_name)}
+              type="button"
+            >
+              Remove
+            </button>
+            <a href="test">
+              <img
+                src={repository.owner.avatar_url}
+                alt={repository.owner.login}
+              />
+              <div>
+                <strong>{repository.full_name}</strong>
+                <p>{repository.description}</p>
+              </div>
 
-            <FiChevronRight size={20} />
-          </a>
+              <FiChevronRight size={20} />
+            </a>
+          </div>
         ))}
       </Repositories>
     </>

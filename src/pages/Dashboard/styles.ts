@@ -67,50 +67,74 @@ export const Repositories = styled.div`
   margin-top: 80px;
   max-width: 700px;
 
-  a {
-    background-color: #fff;
-    border-radius: 5px;
-    width: 100%;
-    padding: 24px;
-    text-decoration: none;
-
-    display: flex;
-    align-items: center;
-    transition: transform 0.2s;
-
-    & + a {
+  div {
+    position: relative;
+    & + div {
       margin-top: 16px;
     }
 
     &:hover {
-      transform: translateX(10px);
-    }
-
-    img {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-    }
-
-    div {
-      margin: 0 16px;
-      flex: 1;
-
-      strong {
-        font-size: 20px;
-        color: #3d3d4d;
+      a {
+        transform: translateX(85px);
       }
 
-      p {
-        font-size: 18px;
-        color: #a8a8b3;
-        margin-top: 4px;
+      button {
+        visibility: visible;
       }
     }
 
-    svg {
-      margin-left: auto;
-      color: #cbcbd6;
+    button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      border: 0;
+      border-radius: 5px 0 0 5px;
+      background-color: #c53030;
+      color: #fff;
+      padding: 0 16px;
+      visibility: hidden;
+      transition: visibility 0.5s ease-in-out;
+    }
+
+    a {
+      z-index: 1;
+      background-color: #fff;
+      border-radius: 5px;
+      width: 100%;
+      padding: 24px;
+      text-decoration: none;
+
+      display: flex;
+      align-items: center;
+      transition: transform 0.5s;
+
+      img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+      }
+
+      div {
+        margin: 0 16px;
+        flex: 1;
+
+        strong {
+          font-size: 20px;
+          color: #3d3d4d;
+        }
+
+        p {
+          font-size: 18px;
+          color: #a8a8b3;
+          margin-top: 4px;
+        }
+      }
+
+      svg {
+        margin-left: auto;
+        color: #cbcbd6;
+      }
     }
   }
 `;
